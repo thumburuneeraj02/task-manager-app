@@ -1,0 +1,70 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-container, .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+input, select, button {
+    padding: 8px;
+}
+
+#taskList {
+    margin-top: 20px;
+}
+
+.task {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid gray;
+}
+
+.task.high {
+    border-color: red;
+}
+
+.task.medium {
+    border-color: orange;
+}
+
+.task.low {
+    border-color: green;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+/* Dark Mode */
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark .task {
+    background: #1e1e1e;
+}
