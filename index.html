@@ -1,53 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Event Management</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input { margin: 5px; padding: 5px; }
+        button { margin: 5px; }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-<button id="themeToggle">🌙 Toggle Theme</button>
-    <h1>Task Manager</h1>
 
-    <!-- Task Form -->
-    <div class="form-container">
-        <input type="text" id="title" placeholder="Task Title">
-        <input type="text" id="description" placeholder="Description">
-        
-        <select id="priority">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-        </select>
+<!-- LOGIN -->
+<div id="loginPage">
+    <h2>Login</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="error" style="color:red;"></p>
+</div>
 
-        <select id="category">
-            <option value="Personal">Personal</option>
-            <option value="Work">Work</option>
-            <option value="Urgent">Urgent</option>
-        </select>
+<!-- MAIN APP -->
+<div id="app" class="hidden">
+    <h2>Event Management System</h2>
 
-        <button id="addTaskBtn">Add Task</button>
-    </div>
+    <button onclick="logout()">Logout</button>
 
-    <!-- 🔍 Filters & Search -->
-    <div class="filters">
-        <select id="filterCategory">
-            <option value="all">All Categories</option>
-            <option value="Personal">Personal</option>
-            <option value="Work">Work</option>
-            <option value="Urgent">Urgent</option>
-        </select>
+    <h3>Add / Edit Event</h3>
+    <input id="title" placeholder="Title">
+    <input id="description" placeholder="Description">
+    <input id="date" type="date">
+    <input id="time" placeholder="Time">
+    <input id="location" placeholder="Location">
 
-        <input type="text" id="search" placeholder="Search tasks...">
-    </div>
+    <button onclick="saveEvent()">Save Event</button>
 
-    <!-- Task List -->
-    <div id="taskList"></div>
+    <h3>Event List</h3>
+    <ul id="eventList"></ul>
+</div>
 
-    <!-- Notification (for later use) -->
-    <div id="notification" class="hidden"></div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
